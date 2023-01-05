@@ -4,7 +4,7 @@ class RoutesController < ApplicationController
         render json:route, status: :ok
       end    
       def show
-        route=Route.find_by( id: params[:id])
+        route=Route.find( params[:id])
         if route
         render json:route, status: :ok 
         else
