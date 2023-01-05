@@ -1,25 +1,21 @@
 class RoutesController < ApplicationController
       def index
         route=Route.all
-        render json:route, status: :ok
+        render json:route
       end    
       def show
-        route=Route.find( params[:id])
-        if route
-        render json:route, status: :ok 
-        else
-        render json: {error: " Route Not Found"}
-        end    
+        route=Route.find_by(id: params[:id])     
+        render json:route           
       end   
       def create
         route=Route.create(route_params)
-        render json:route, status: :created
+        render json:route
       end    
       def update
         route=Route.find_by(id: params[:id])
-        route.update!(route_params)
-        render json:route,status: :ok        
-      end    
+        route.update(route_params)
+        render json:route
+      end
       def destroy
         route =Route.find_by(id: params[:id])
         route.destroy
