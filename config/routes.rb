@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :customers, only:[:create,:index,:show]
   resources :vehicles
   resources :routes
+
+  post "/login", to: "sessions#create"
 end
