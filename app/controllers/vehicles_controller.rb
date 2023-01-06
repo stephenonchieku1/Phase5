@@ -5,8 +5,14 @@ class VehiclesController < ApplicationController
       end
     
       def show
-        vehicle=Vehicle.find_by(id:params[:id])       
-        render json:vehicle, status: :ok, includes: :routes   
+
+        vehicle=Vehicle.find_by(id:params[:id])
+        if vehicle
+        render json: vehicle, status: :ok
+        else
+        render json: {error: "Vehicle not Found"}, status: :unauthorized
+        end
+
       end
     
       def create
