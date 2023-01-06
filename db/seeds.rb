@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Create 37 seats
+#37.times do |n|
+ # seat = Seat.new
+ # seat.booked = false
+  #seat.save
+#end

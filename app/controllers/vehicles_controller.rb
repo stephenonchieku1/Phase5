@@ -7,7 +7,7 @@ class VehiclesController < ApplicationController
       def show
         vehicle=Vehicle.find_by(id:params[:id])
         if vehicle
-        render json:vehicle, status: :ok
+        render json: vehicle, status: :ok
         else
         render json: {error: "Vehicle not Found"}, status: :unauthorized
         end
