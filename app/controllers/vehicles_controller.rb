@@ -6,7 +6,7 @@ class VehiclesController < ApplicationController
     
       def show
         vehicle=Vehicle.find_by(id:params[:id])       
-        render json:vehicle, status: :ok       
+        render json:vehicle, status: :ok, includes: :routes   
       end
     
       def create

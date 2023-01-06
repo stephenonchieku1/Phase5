@@ -1,4 +1,5 @@
 class Vehicle < ApplicationRecord
+    has_many :routes
     validates :departure_time, presence: true
     validates :arrival_time, presence: true
     validates :route_id, presence: true

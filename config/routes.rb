@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :routes
 
   post "/login", to: "sessions#create"
+  post "/signup",to:""
+  
 end
