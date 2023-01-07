@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   resources :customers, only:[:create,:index,:show]
   resources :vehicles
   resources :routes
-
-  post "/login", to: "sessions#create"
+ post "/login", to: "sessions#create"
   post "/signup",to:"sessions#create"
-  
+
+   #resources :vehicles do
+    #resources :seats
+    #post '/seats/:id/book', to: 'seats#book', as: 'book_seat'
+  #end
+
 end
