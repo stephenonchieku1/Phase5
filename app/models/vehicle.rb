@@ -1,11 +1,12 @@
 class Vehicle < ApplicationRecord
+    has_many :routes, ->{includes :routes}
     validates :departure_time, presence: true
-    validates :arrival_time, presence: true
-    validates :route_id, presence: true
-    validates :sacco_id, presence: true
-    validates :image, presence: true
-    validates :vehicle_name, presence: true
-    validates :no_of_seats, presence: true
+   # validates :arrival_time, presence: true
+    #validates :route_id, presence: true
+    #validates :sacco_id, presence: true
+    #validates :image, presence: true
+    #validates :vehicle_name, presence: true
+    #validates :no_of_seats, presence: true
     attr_accessor :arrival_time
     attr_accessor :departure_time
     attr_accessor :sacco_id

@@ -5,12 +5,14 @@ class VehiclesController < ApplicationController
       end
     
       def show
+
         vehicle=Vehicle.find_by(id:params[:id])
         if vehicle
         render json: vehicle, status: :ok
         else
         render json: {error: "Vehicle not Found"}, status: :unauthorized
         end
+
       end
     
       def create
@@ -33,7 +35,7 @@ class VehiclesController < ApplicationController
       private
     
       def vehicle_params
-        params.permit(:vehicle_name,:route_id,:departure_time,:arrival_time,:no_of_seats,:seat_id,:image, :sacco_id)
+        params.permit(:vehicle_name,:route_id,:departure_time,:arrival_time,:no_of_seats,:image, :sacco_id)
       end
     
       def find_vehicle
