@@ -23,17 +23,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_042826) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "routes", force: :cascade do |t|
-    t.string "From_location"
-    t.string "To_location"
-    t.integer "Price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,13 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_042826) do
   end
 
   create_table "vehicles", force: :cascade do |t|
-    t.string "vehicle_name"
-    t.integer "route_id"
-    t.string "departure_time"
-    t.string "arrival_time"
-    t.integer "no_of_seats"
-    t.integer "sacco_id"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
