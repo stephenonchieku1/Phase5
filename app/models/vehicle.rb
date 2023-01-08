@@ -1,4 +1,5 @@
 class Vehicle < ApplicationRecord
+    has_many :bookings
     has_many :routes, ->{includes :routes}
     validates :departure_time, presence: true
    # validates :arrival_time, presence: true
