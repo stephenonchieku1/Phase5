@@ -1,4 +1,5 @@
 class Vehicle < ApplicationRecord
+    belongs_to :sacco
     has_many :bookings
     has_many :routes, ->{includes :routes}
     validates :departure_time, presence: true
