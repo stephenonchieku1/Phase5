@@ -31,5 +31,12 @@ class CustomersController < ApplicationController
         
         def customer_params
         params.permit(:name, :email, :password)
+        end  
+               
+        def authorize
+            @current_user = Customer.find_by(id: session[:customer_id])
+        
+            render json: { errors: ["Not authorized"] }.to_json, status: :unauthorized unless @current_user
         end
+        
 end
