@@ -1,6 +1,7 @@
 class Seat < ApplicationRecord
   belongs_to :vehicle 
-  has_many :bookings
+  belongs_to :bookings
+ # has_many :bookings
   validates :booked, presence: true
   validates :number, presence: true, uniqueness: true, numericality: { only_integer: true, greater_than: 0, less_than: 40 }
 
