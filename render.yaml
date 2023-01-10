@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: phase5
+    databaseName: phase5
+    user: phase5
 
 services:
   - type: web
-    name: mysite
+    name: phase5
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: phase5
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
