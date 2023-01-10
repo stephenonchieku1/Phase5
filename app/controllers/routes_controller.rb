@@ -23,6 +23,7 @@ class RoutesController < ApplicationController
       end    
       private
       def route_params
+       # params.require(:route).permit(:From_location, :To_location, :Price)
         params.permit(:From_location, :To_location ,:Price)
       end
     

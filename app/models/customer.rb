@@ -5,6 +5,4 @@ class Customer < ApplicationRecord
     attr_accessor :email
     attr_accessor :password_digest   
     has_secure_password
-
-
 end
