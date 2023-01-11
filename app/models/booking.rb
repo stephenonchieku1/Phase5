@@ -1,3 +1,4 @@
+class Booking < ApplicationRecord
 belongs_to :customer
 belongs_to :vehicle
 
@@ -6,3 +7,4 @@ validates :vehicle_id, presence:true
 validates :seat_id, presence: true
 
 end
+

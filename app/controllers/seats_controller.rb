@@ -1,5 +1,5 @@
 class SeatsController < ApplicationController
-  before_action :set_seat, only: %i[ show update destroy ]
+  #before_action :set_seat, only: %i[ show update destroy ]
 
   # GET /seats
   def index

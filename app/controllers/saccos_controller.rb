@@ -1,5 +1,5 @@
 class SaccosController < ApplicationController
-  #before_action :set_sacco, only: %i[ show update destroy ]
+ # before_action :set_sacco, only: [:create, :show, :update, :destroy ]
 
   # GET /saccos
   def index
@@ -46,7 +46,7 @@ class SaccosController < ApplicationController
   private
     # Only allow a list of trusted parameters through.
     def sacco_params
-      params.permit(:name, :image_url)
+      params.permit(:name, :email, :password_digest, :image_url)
     end
 
     def render_not_found_response

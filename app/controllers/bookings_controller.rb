@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :update, :destroy ]
+  #before_action :set_booking, only: [:show, :update, :destroy ]
 
   # GET /bookings
   def index
