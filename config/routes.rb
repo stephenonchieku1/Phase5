@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :seats
+  resources :bookings
   resources :saccos
   resources :seats, only: [:index, :show, :update]
   #resources :seats, only:[:index, :show]
