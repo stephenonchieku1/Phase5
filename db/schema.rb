@@ -14,14 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_042826) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookings", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "vehicle_id"
-    t.integer "seat_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -34,20 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_06_042826) do
     t.string "From_location"
     t.string "To_location"
     t.integer "Price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "saccos", force: :cascade do |t|
-    t.string "name"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "seats", force: :cascade do |t|
-    t.string "name"
-    t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
