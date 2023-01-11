@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
         
         def create 
             customer= Customer.create(customer_params)           
-             session[:customer_id] = customer.id
+             #session[:sacco_id] = sacco.id
             render json: customer, status: :created        
         end
       

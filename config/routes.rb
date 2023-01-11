@@ -11,11 +11,6 @@ Rails.application.routes.draw do
   resources :bookings
   resources :saccos
 
-   #resources :vehicles do
-    #resources :seats
-    #post '/seats/:id/book', to: 'seats#book', as: 'book_seat'
-  #end
-
 
   post "/login", to: "sessions#create"
   post "/signup",to:"sessions#create"
