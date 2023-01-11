@@ -16,37 +16,29 @@ saccos = Sacco.create([
 
     {
     "name": "Modern Coast Sacoo",
-    "email": "moderncoastsacco@gmail.com",
-    "password_digest": "123456"
-    "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.glassdoor.com%2FOverview%2FWorking-at-Modern-Coast-EI_IE4343459.11%2C23.htm&psig=AOvVaw2ovcK0537EZRjFGa6PsdPm&ust=1673424556217000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOjMrLPGvPwCFQAAAAAdAAAAABAS"
+    "image_url": "https://media.glassdoor.com/sqll/4343459/modern-coast-squarelogo-1627543982986.png"
     },
 
     {
     "name": "Easy Coach Sacoo",
-    "email": "easycoachsacco@gmail.com",
-    "password_digest": "123456"
-    "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Fisk_kenya%2Fstatus%2F1333399219546288128&psig=AOvVaw119IAfjVpgt8Owjo1XLAY-&ust=1673424774157000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCNCrzJzHvPwCFQAAAAAdAAAAABAD"
+    "image_url": "https://inbizlinks.co.ke/BizDirectory/images/user_profile/logo33.png"
     },
 
     {
-    "name": "Mololine Sacoo",
-    "email": "mololinesacoo@gmail.com",
-    "password_digest": "123456"
-    "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2FMoloLineServicesLimited%2F&psig=AOvVaw0fhVMGgtsASRGQ5-9O6sAg&ust=1673424927320000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCMjX9ubHvPwCFQAAAAAdAAAAABAD"
+    "name": "Ena Coach Sacoo",
+    "image_url": "https://pbs.twimg.com/profile_images/1184699014949822464/Gblzp7fu_400x400.jpg"
     },
 
     {
     "name": "Mash Poa Sacoo",
-    "email": "mashpoa@gmail.com",
-    "password_digest": "123456"
-    "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftimbu.com%2Fkenya%2Fbus%2Fmash-bus-services-limited%2Fonline-booking&psig=AOvVaw1Xe9LZ9gvWf1_37rlxvc-6&ust=1673425045322000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCMDJmZ7IvPwCFQAAAAAdAAAAABAH"
+    "image_url": "https://cms.timbu.com/storage/photos/mash_bus_services_limited_1570795372.jpg"
     },
 
     {
     "name": "Tahmeed Sacoo",
-    "email": "tahmeedsacoo@gmail.com",
+    "email": "johndoe@gmail.com",
     "password_digest": "123456"
-    "image_url": "https://play.google.com/store/apps/details?id=com.tahmeedcoach&hl=en_US&gl=US"
+    "image_url": "https://pbs.twimg.com/profile_images/1168729053836251136/EWTvTxNz_400x400.jpg"
     },
  ]), 
  seats = Seat.create([
