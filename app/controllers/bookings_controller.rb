@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   #before_action :set_booking, only: [:show, :update, :destroy ]
-
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+  
   # GET /bookings
   def index
     bookings = Booking.all
