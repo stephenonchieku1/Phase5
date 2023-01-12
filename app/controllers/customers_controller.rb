@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-       #skip_before_action :authorize, only: :create
+    #skip_before_action :authorize, only: :create
 
        def index
         customer=Customer.all

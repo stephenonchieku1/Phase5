@@ -8,13 +8,13 @@ class RoutesController < ApplicationController
         render json: route           
       end   
       def create
-        route=Route.new(route_params)
-        if route.save
-         render json:route,  status: :created, location: @route
+        route=Route.create(route_params)
+        if route
+         render json:route,  status: :created
         else
-         render json: route.errors, status: :unprocessable_entity
+         render json: {error: "Not created!"}, status: :unprocessable_entity
         end
-      end   
+      end  
       def update
         route=Route.find_by(id: params[:id])
         route.update(route_params)
@@ -27,8 +27,12 @@ class RoutesController < ApplicationController
       end    
       private
       def route_params
+<<<<<<< HEAD
        params.require(:route).permit(:From_location, :To_location, :Price)
        # params.permit(:From_location, :To_location ,:Price)
+=======
+        params.require(:route).permit(:From_location, :To_location ,:Price)
+>>>>>>> Daisy
       end
     
       def render_not_found_response

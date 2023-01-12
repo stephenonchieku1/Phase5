@@ -38,5 +38,18 @@ class VehiclesController < ApplicationController
         params.permit(:vehicle_name,:route_id,:departure_time,:arrival_time,:no_of_seats,:image, :sacco_id)
       end
     
+<<<<<<< HEAD
      
 end      
+=======
+      #def find_vehicle
+       # Vehicle.find(params[:id])
+      #end
+    
+      #def render_not_found_response
+       # render json: {error:"Event not found!"}.to_json,status: :not_found
+      #end
+    
+
+end
+>>>>>>> Daisy
