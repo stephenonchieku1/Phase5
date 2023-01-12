@@ -1,7 +1,4 @@
 class Route < ApplicationRecord
-    belongs_to :vehicle
-    attr_accessor :To_location
-    attr_accessor :From_location
-    attr_accessor :Price
+    has_many :vehicles
     validates :Price, presence: true
 end

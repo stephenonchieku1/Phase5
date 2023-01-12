@@ -117,7 +117,7 @@ vehicle=Vehicle.create( [
     "route_id": 1,
     "departure_time": "2020-09-12 12:00:00",
     "arrival_time": "2020-09-12 14:00:00",
-    "no_of_seats": 50,
+    "no_of_seats": 37,
     "sacco_id": 1,
     "image": "bus1.jpg"
   },
@@ -126,7 +126,7 @@ vehicle=Vehicle.create( [
     "route_id": 2,
     "departure_time": "2020-09-13 09:00:00",
     "arrival_time": "2020-09-13 12:00:00",
-    "no_of_seats": 60,
+    "no_of_seats": 37,
     "sacco_id": 2,
     "image": "bus2.jpg"
   }

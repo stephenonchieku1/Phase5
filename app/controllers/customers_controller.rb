@@ -16,9 +16,14 @@ class CustomersController < ApplicationController
         end   
         
         def create 
-            customer= Customer.create(customer_params)           
-             #session[:sacco_id] = sacco.id
-            render json: customer, status: :created        
+            customer= Customer.create(customer_params) 
+        if customer.valid?          
+            session[:customer_id] = customer.id
+            render json: customer, status: :created 
+        else  
+            render json: {errors: customer.errors.full_messages}, status: :unprocessable_entity
+        end
+       
         end
       
 

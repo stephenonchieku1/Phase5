@@ -26,6 +26,7 @@ class BookingsController < ApplicationController
 
   # PATCH/PUT /bookings/1
   def update
+    booking = find_booking
     if booking.update(booking_params)
       render json: booking
     else
@@ -47,5 +48,9 @@ class BookingsController < ApplicationController
 
     def booking_params
       params.permit(:customer_id, :vehicle_id, :seat_id)
+    end
+
+    def render_not_found_response
+        render json: {error:"Booking not found!"}.to_json,status: :not_found
     end
 end

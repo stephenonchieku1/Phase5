@@ -26,7 +26,7 @@ class SeatsController < ApplicationController
     if seat.update(seat_params)
       render json: seat
     else
-      render json: seat.errors, status: :unprocessable_entity
+      render json: {errors: "Seat not found"}, status: :unprocessable_entity
     end
   end
 
@@ -48,7 +48,7 @@ class SeatsController < ApplicationController
       params.permit(:seat_no, :status)
     end
 
-    def seat_not_found_response
+    def render_not_found_response
         render json: {error: "Seat not found"}
     end
 end

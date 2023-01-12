@@ -1,9 +1,6 @@
 class Customer < ApplicationRecord
-
-    validates :email, presence: true,uniqueness: true
-    #attr_accessor :name
-    #attr_accessor :email
-    #attr_accessor :password_digest   
+    has_many :bookings
+    validates :email, presence: true,uniqueness: true  
 
     has_secure_password
 

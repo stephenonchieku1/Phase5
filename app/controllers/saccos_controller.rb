@@ -1,5 +1,5 @@
 class SaccosController < ApplicationController
-  #before_action :set_sacco, only: [:create, :show, :destroy ]
+  before_action :set_sacco, only: [:create, :show, :destroy ]
  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /saccos
@@ -39,9 +39,9 @@ class SaccosController < ApplicationController
 
   # DELETE /saccos/1
     def destroy
-    sacco = find_sacco
-    sacco.destroy
-    head :no_content
+      sacco=Sacco.find_by(id: params[:id])
+          sacco.destroy
+          head :no_content
     end   
 
 
