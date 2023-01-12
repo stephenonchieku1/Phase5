@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :seats, only: [:index, :show, :update]
+  #resources :seats, only:[:index, :show]
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -7,13 +9,12 @@ Rails.application.routes.draw do
   resources :customers, only:[:create,:index,:show]
   resources :vehicles
   resources :routes
-  resources :seats
-  resources :bookings
-  resources :saccos
-
-
-  post "/login", to: "sessions#create"
-  post "/signup",to:"sessions#create"
-  
+  post "/signup",  to: "customers#create"
+  post '/auth/login', to: 'sessions#customer_login'
+  delete '/auth/logout', to: 'sessions#customer_logout'
+   #resources :vehicles do
+    #resources :seats
+    #post '/seats/:id/book', to: 'seats#book', as: 'book_seat'
+  #end
 
 end
