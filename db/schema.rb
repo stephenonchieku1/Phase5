@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_083240) do
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,14 +48,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_083240) do
   end
 
   create_table "seats", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string "name"
-    t.boolean "status"
->>>>>>> f8ac254 (seeeding and migrations done)
-=======
     t.integer "seat_no"
     t.boolean "status"
->>>>>>> main
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,8 +57,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_083240) do
   create_table "vehicles", force: :cascade do |t|
     t.string "vehicle_name"
     t.integer "route_id"
-    t.string "departure_time"
-    t.string "arrival_time"
+    t.datetime "departure_time"
+    t.datetime "arrival_time"
     t.integer "no_of_seats"
     t.integer "sacco_id"
     t.string "image"
