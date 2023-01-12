@@ -18,4 +18,14 @@ class SessionsController < ApplicationController
         session.delete :customer_id
         head :no_content
     end
+
+    def create
+        sacco = Sacco.find_by(email:params[:email])
+        if sacco&.authenticate(params[:password])
+            sessions[:sacco_id] = sacco.id
+            render json: sacco, status: :created
+        else
+            render json: { errors: ["Invalid username or passsword"] }, status: :unauthorized
+        end
+    #end
 end

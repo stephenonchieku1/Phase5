@@ -1,51 +1,60 @@
 class SaccosController < ApplicationController
-  before_action :set_sacco, only: %i[ show update destroy ]
+  #before_action :set_sacco, only: [:create, :show, :destroy ]
+ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /saccos
   def index
     saccos = Sacco.all
-
-    render json: saccos
+    render json: saccos, status: :ok
   end
 
   # GET /saccos/1
   def show
-    render json: sacco
+    sacco = find_sacco
+            if sacco             
+            render json: sacco, status: :created
+            else
+            render json: {error: "Not authorized"}, status: :unauthorized
+            end   
   end
 
   # POST /saccos
   def create
-    sacco = Sacco.new(sacco_params)
-
-    if sacco.save
-      render json: sacco, status: :created, location: @sacco
+    sacco = Sacco.create(sacco_params)
+    if sacco.valid?
+      session[:sacco_id] = sacco.id
+      render json: sacco, status: :created
     else
-      render json: sacco.errors, status: :unprocessable_entity
+      render json: { error: "Not authorized" }, status: :unauthorized
     end
   end
 
   # PATCH/PUT /saccos/1
-  def update
-    if sacco.update(sacco_params)
-      render json: sacco
-    else
-      render json: sacco.errors, status: :unprocessable_entity
-    end
+   def update
+        sacco = find_sacco
+        sacco.update!(sacco_params)
+        render json:sacco,status: :ok        
+      end
   end
 
   # DELETE /saccos/1
-  def destroy
+    def destroy
+    sacco = find_sacco
     sacco.destroy
-  end
+    head :no_content
+    end   
+
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_sacco
-      sacco = Sacco.find(params[:id])
+    def sacco_params
+      params.permit(:name, :email, :password_digest, :image_url)
     end
 
-    # Only allow a list of trusted parameters through.
-    def sacco_params
-      params.require(:sacco).permit(:name, :image_url)
-    end
-end
+   def find_sacco
+        Sacco.find(params[:id])
+      end
+
+    def render_not_found_response
+       render json: {error:"Sacco not found!"}, status: :not_found
+    end 
+

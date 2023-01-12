@@ -1,3 +1,5 @@
 class SeatSerializer < ActiveModel::Serializer
-  attributes :id, :name, :status
+  attributes :id, :seat_no, :status
+
+  has_many :bookings
 end
