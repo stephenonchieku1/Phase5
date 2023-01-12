@@ -1,5 +1,6 @@
 class SaccosController < ApplicationController
- # before_action :set_sacco, only: [:create, :show, :update, :destroy ]
+  #before_action :set_sacco, only: [:create, :show, :destroy ]
+ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /saccos
   def index
@@ -9,7 +10,7 @@ class SaccosController < ApplicationController
 
   # GET /saccos/1
   def show
-    sacco = Sacco.find_by(id: params[:id])
+    sacco = find_sacco
             if sacco             
             render json: sacco, status: :created
             else
@@ -20,17 +21,17 @@ class SaccosController < ApplicationController
   # POST /saccos
   def create
     sacco = Sacco.create(sacco_params)
-
     if sacco.valid?
+      session[:sacco_id] = sacco.id
       render json: sacco, status: :created
     else
-      render json: {errors: user.error.full_messages} , status: :unprocessable_entity
+      render json: { error: "Not authorized" }, status: :unauthorized
     end
   end
 
   # PATCH/PUT /saccos/1
    def update
-        sacco=Sacco.find_by(id: params[:id])
+        sacco = find_sacco
         sacco.update!(sacco_params)
         render json:sacco,status: :ok        
       end
@@ -38,16 +39,20 @@ class SaccosController < ApplicationController
 
   # DELETE /saccos/1
     def destroy
-    sacco =Sacco.find_by(id: params[:id])
+    sacco = find_sacco
     sacco.destroy
     head :no_content
-    end    
+    end   
+
 
   private
-    # Only allow a list of trusted parameters through.
     def sacco_params
       params.permit(:name, :email, :password_digest, :image_url)
     end
+
+   def find_sacco
+        Sacco.find(params[:id])
+      end
 
     def render_not_found_response
        render json: {error:"Sacco not found!"}, status: :not_found

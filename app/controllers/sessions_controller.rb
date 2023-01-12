@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
 
     def create
         sacco = Sacco.find_by(email:params[:email])
-        #if sacco = sacco.authenticate(params[:password_digest])
+        if sacco&.authenticate(params[:password])
             sessions[:sacco_id] = sacco.id
-            render json: sacco
-        #else
-            #render json: {status: :unauthorised, message: 'Email or password is incorrect.'}
-        #end
-    end
+            render json: sacco, status: :created
+        else
+            render json: { errors: ["Invalid username or passsword"] }, status: :unauthorized
+        end
+    #end
 end

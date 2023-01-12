@@ -9,7 +9,7 @@
 # Create 37 seats
 #37.times do |n|
  # seat = Seat.new
- # seat.booked = false
+ # seat.booked = "false"
   #seat.save
 #end
 saccos = Sacco.create([
@@ -49,14 +49,14 @@ saccos = Sacco.create([
     image_url: "https://pbs.twimg.com/profile_images/1168729053836251136/EWTvTxNz_400x400.jpg"
     }
  ])
-#seats = Seat.create([
-  #{ seat_no: 1,status: false}
-  #])
+ 
 
-  def Seat.create
-    37.times do |n|
-    seat = Seat.new
-    seat.booked = true
-    end
+  puts "done "
+
+  #def Seat.create
+   # 37.times do |n|
+    #seat = Seat.new
+    #seat.booked = true
+   # end
       
-  end
+  #end
