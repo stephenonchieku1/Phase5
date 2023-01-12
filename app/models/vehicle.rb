@@ -9,12 +9,12 @@ class Vehicle < ApplicationRecord
     #validates :image, presence: true
     #validates :vehicle_name, presence: true
     #validates :no_of_seats, presence: true
-    attr_accessor :arrival_time
-    attr_accessor :departure_time
-    attr_accessor :sacco_id
-    attr_accessor :image
-   attr_accessor :no_of_seats 
-    attr_accessor :route_id
-    attr_accessor :vehicle_name
+   # attr_accessor :arrival_time
+    #attr_accessor :departure_time
+    #attr_accessor :sacco_id
+    #attr_accessor :image
+   #attr_accessor :no_of_seats 
+    #attr_accessor :route_id
+    #attr_accessor :vehicle_name
     
 end
