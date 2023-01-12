@@ -2,10 +2,10 @@
 
 one:
   customer_id: 1
-  vehicle_id: 1
   seat_id: 1
+  vehicle_id: 1
 
 two:
   customer_id: 1
-  vehicle_id: 1
   seat_id: 1
+  vehicle_id: 1
