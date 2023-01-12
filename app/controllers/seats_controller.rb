@@ -44,7 +44,6 @@ class SeatsController < ApplicationController
       Seat.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def seat_params
       params.permit(:seat_no, :status)
     end

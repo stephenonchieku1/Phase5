@@ -49,7 +49,7 @@ saccos = Sacco.create([
     image_url: "https://pbs.twimg.com/profile_images/1168729053836251136/EWTvTxNz_400x400.jpg"
     }
  ]), 
- Seat.create([
+ seats = Seat.create([
   { "seat_no": 1, "status": "false" },
   { "seat_no": 2, "status": "false" },
   { "seat_no": 3, "status": "false" },
@@ -91,11 +91,3 @@ saccos = Sacco.create([
  
 
   #puts "done "
-
-  #def Seat.create
-   # 37.times do |n|
-    #seat = Seat.new
-    #seat.booked = true
-   # end
-      
-  #end
