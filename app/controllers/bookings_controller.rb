@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   # POST /bookings
   def create
     booking = Booking.create(booking_params)
-    if booking.valid?
+    if booking
       render json: booking, status: :created
     else
       render json: booking.errors, status: :unprocessable_entity
