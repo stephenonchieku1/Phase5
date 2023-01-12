@@ -1,5 +1,5 @@
 class Vehicle < ApplicationRecord
-    belongs_to :routes
+    belongs_to :route
     has_many :bookings
     validates :departure_time, presence: true
     
