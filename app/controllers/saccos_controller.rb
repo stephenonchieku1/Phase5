@@ -1,5 +1,5 @@
 class SaccosController < ApplicationController
-  before_action :set_sacco, only: [:create, :show, :destroy ]
+  #before_action :set_sacco, only: [:create, :show, :destroy ]
  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /saccos
