@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
         render json: customer
     end
     def customer_login
-        customer = customer.find_by(email: params[:email])
+        customer = Customer.find_by(email: params[:email])
         if customer&.authenticate(params[:password])
             session[:customer_id] = customer.id
             render json: customer, status: :created
