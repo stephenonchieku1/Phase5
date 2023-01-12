@@ -37,13 +37,7 @@ class SaccosController < ApplicationController
       end
   end
 
-  # DELETE /saccos/1
-    def destroy
-      sacco=Sacco.find_by(id: params[:id])
-          sacco.destroy
-          head :no_content
-    end   
-
+  
 
   private
     def sacco_params

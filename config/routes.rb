@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :routes
   resources :seats
   resources :bookings
-  resources :saccos
+  resources :saccos, only:[:index, :create, :show, :update]
 
 
   post "/login", to: "sessions#create"
