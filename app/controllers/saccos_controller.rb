@@ -34,8 +34,8 @@ class SaccosController < ApplicationController
         sacco = find_sacco
         sacco.update!(sacco_params)
         render json:sacco,status: :ok        
-      end
-  end
+      
+   end
 
   # DELETE /saccos/1
     def destroy
@@ -52,9 +52,10 @@ class SaccosController < ApplicationController
 
    def find_sacco
         Sacco.find(params[:id])
-      end
+   end
 
     def render_not_found_response
        render json: {error:"Sacco not found!"}, status: :not_found
     end 
 
+end
