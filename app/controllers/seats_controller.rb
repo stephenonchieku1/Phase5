@@ -46,7 +46,7 @@ class SeatsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def seat_params
-      params.permit(:name, :status)
+      params.permit(:seat_no, :status)
     end
 
     def seat_not_found_response

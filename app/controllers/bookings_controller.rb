@@ -4,12 +4,12 @@ class BookingsController < ApplicationController
   # GET /bookings
   def index
     bookings = Booking.all
-
     render json: bookings
   end
 
   # GET /bookings/1
   def show
+    booking = find_booking
     render json: booking
   end
 
@@ -34,16 +34,16 @@ class BookingsController < ApplicationController
 
   # DELETE /bookings/1
   def destroy
+    booking = find_booking
     booking.destroy
+    head :no_content
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    #def set_booking
-    #  booking = Booking.find(params[:id])
-    #end
+    def find_booking
+        Booking.find(params[:id])
+    end
 
-    # Only allow a list of trusted parameters through.
     def booking_params
       params.permit(:customer_id, :vehicle_id, :seat_id)
     end
