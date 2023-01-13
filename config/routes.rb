@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :vehicles
   resources :routes
   post "/signup",  to: "customers#create"
-  post '/auth/login', to: 'sessions#customer_login'
+  post '/login', to: 'sessions#create'
   delete '/auth/logout', to: 'sessions#customer_logout'
    #resources :vehicles do
     #resources :seats
