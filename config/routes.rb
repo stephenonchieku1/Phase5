@@ -12,8 +12,12 @@ Rails.application.routes.draw do
   resources :saccos, only:[:index,:create,:show,:update]
 
 
-  post "/login", to: "sessions#create"
-  post "/signup",to:"sessions#create"
-  
+  post '/customer/signup',  to: "customers#create"
+  post '/customer/login', to: 'sessions#customer_login'
+  delete '/customer/logout', to: 'sessions#customer_logout'
+
+  post '/sacco/signup',  to: "saccos#create"
+  post '/sacco/login', to: 'sessions#sacco_login'
+  delete '/sacco/logout', to: 'sessions#sacco_logout'
 
 end

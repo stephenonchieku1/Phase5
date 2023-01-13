@@ -1,6 +1,6 @@
 class SaccosController < ApplicationController
   #before_action :set_sacco, only: [:create, :show, :destroy ]
- rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   # GET /saccos
   def index
@@ -41,7 +41,7 @@ class SaccosController < ApplicationController
 
   private
     def sacco_params
-      params.permit(:name, :email, :password_digest, :image_url)
+      params.permit(:name, :email, :password, :image_url)
     end
 
    def find_sacco

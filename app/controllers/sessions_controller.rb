@@ -1,18 +1,34 @@
 class SessionsController < ApplicationController
-    def create
+
+    def customer_login
         customer = Customer.find_by(email: params[:email])
-        session[:customer_id] = customer.id
-        render json: customer
+        if customer&.authenticate(params[:password])
+            session[:customer_id] = customer.id
+            render json: customer, status: :created
+        else
+            render json: {error: "Invalid email or password"}.to_json, status: :unauthorized
+        end
     end
 
-    def create
-        sacco = Sacco.find_by(email:params[:email])
+    def customer_logout
+        session.delete :customer_id
+        head :no_content
+    end
+
+    def sacco_login
+        sacco = Sacco.find_by(email: params[:email])
         if sacco&.authenticate(params[:password])
-            sessions[:sacco_id] = sacco.id
+            session[:sacco_id] = sacco.id
             render json: sacco, status: :created
         else
-            render json: { errors: ["Invalid username or passsword"] }, status: :unauthorized
+            render json: {error: "Invalid email or password"}.to_json, status: :unauthorized
         end
+    end
+
+
+    def sacco_logout
+        session.delete :sacco_id
+        head :no_content
     end
 end
  
