@@ -38,7 +38,7 @@ class VehiclesController < ApplicationController
       private
     
       def vehicle_params
-        params.permit(:vehicle_name,:route_id,:departure_time,:arrival_time,:no_of_seats,:image, :sacco_id, :seat_id)
+        params.permit(:vehicle_name,:route_id,:departure_time,:arrival_time,:no_of_seats,:image, :sacco_id)
       end
     
       def find_vehicle
